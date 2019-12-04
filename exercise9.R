@@ -1,4 +1,21 @@
-#part2
+#Part1
+#1
+library("ggplot2")
+library("cowplot")
+library("reshape2")
+#Note: 50 Dictatorships were found in total, however, 7 were removed due to a lack of data (i.e. North Korea) and one additional one was removed, Bahrain, because it was a drastic outlier, having a very high population density; Bahrain is in fact the #8 densest population worldwide at about 2,000people/sq.km)
+#Reading the file that contains data on Dictatorships, their GDP per Capita, and their Population Density
+DictVGDP<-read.csv("DictVGDP.csv")
+#Making a vector of GDP/Capita data:
+GDP_per_Capita<-DictVGDP$ï..gdp
+#Making a vector of population density data:
+Population_Density<-DictVGDP$N
+#Creating the plot:
+myscatterplot<-ggplot(data = GDP2, mapping=aes(x=GDP_per_Capita,y=Population_Density))+geom_point(data = GDP2, mapping=aes(x=GDP_per_Capita,y=Population_Density))+stat_smooth(method="lm",color="red")
+#Viewing the plot:
+myscatterplot
+
+#Part2
 #opening libraries
 library("ggplot2")
 library("cowplot")
